@@ -28,3 +28,13 @@ Rfh2Header outRfh2 = Rfh2Header.create(outMsg);
 // set a usr property
 outRfh2.setStringProperty("usr", "foo", "bar");
 }}}
+
+== Reading an RFH2 header ==
+{{{
+MbMessage inMsg = inAssembly.getMessage();
+
+Rfh2Header inRfh2 = Rfh2Header.wrap(inMsg, true);
+
+// get a string value in the usr folder
+String foo = inRfh2.getStringProperty("usr", "foo");
+}}}
