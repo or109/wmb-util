@@ -38,3 +38,6 @@ Rfh2Header inRfh2 = Rfh2Header.wrap(inMsg, true);
 // get a string value in the usr folder
 String foo = inRfh2.getStringProperty("usr", "foo");
 }}}
+
+== Additional example ==
+You can find more examples in [http://wmb-util.googlecode.com/svn/wmb-util/trunk/src/examples/java/com/googlecode/wmbutil/messages/ SVN]
