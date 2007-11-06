@@ -3,7 +3,7 @@
 
 The WMB helper classes aims at making your Java transformation code easier. They do this by assuming some common patterns for message structures and transformations. 
 
-In general the helper classes are wrappers around the WMB MbMessage and MbElement classes. They provide strongly named and typed methods for creating and consuming messages. For example, instead of creating a RFH2 header by creating each MbElement of the correct type and value, you use the RfhHeader class which provides methods for the most common tasks done with RFH2 headers. If you need to do something the helper classes do not support, you can still use the WMB classes directly.
+In general the helper classes are wrappers around the WMB `MbMessage` and `MbElement` classes. They provide strongly named and typed methods for creating and consuming messages. For example, instead of creating a RFH2 header by creating each MbElement of the correct type and value, you use the RfhHeader class which provides methods for the most common tasks done with RFH2 headers. If you need to do something the helper classes do not support, you can still use the WMB classes directly.
 
 The helper classes all have static method for wrapping an existing element, creating a new and checking if a structure already exists.
 
