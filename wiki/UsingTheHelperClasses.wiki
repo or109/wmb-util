@@ -1,0 +1,30 @@
+#summary Using the helper classes
+#labels Phase-Implementation
+
+The WMB helper classes aims at making your Java transformation code easier. They do this by assuming some common patterns for message structures and transformations. 
+
+In general the helper classes are wrappers around the WMB MbMessage and MbElement classes. They provide strongly named and typed methods for creating and consuming messages. For example, instead of creating a RFH2 header by creating each MbElement of the correct type and value, you use the RfhHeader class which provides methods for the most common tasks done with RFH2 headers. If you need to do something the helper classes do not support, you can still use the WMB classes directly.
+
+The helper classes all have static method for wrapping an existing element, creating a new and checking if a structure already exists.
+
+Below are some simple examples which shows how to do some basic transformations.
+
+== Creating an RFH header ==
+Creating an RFH2 header requires that an MQMD header already exists, so we first create it using the MqmdHeader class.
+
+{{{
+// create outmessage from scratch, we normally do not want to copy to incoming message
+MbMessage outMsg = new MbMessage();
+
+MbMessageAssembly outAssembly = new MbMessageAssembly(inAssembly, outMsg);
+
+// create MQMD for the out message
+MqmdHeader mqmd = MqmdHeader.create(outMsg);
+
+// create an RFH2 header
+// creating the RFH2 header will automatically set the MQMD format correctly
+Rfh2Header outRfh2 = Rfh2Header.create(outMsg);
+
+// set a usr property
+outRfh2.setStringProperty("usr", "foo", "bar");
+}}}
