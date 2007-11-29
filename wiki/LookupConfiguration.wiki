@@ -1,0 +1,10 @@
+#labels Phase-Implementation
+
+
+
+{{{
+lookup.class=com.ibm.db2.jcc.DB2Driver
+lookup.url=jdbc:db2://172.0.0.1:50000/WBRKDATA
+lookup.username=sa
+lookup.password=sa
+}}}
