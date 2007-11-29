@@ -1,6 +1,5 @@
 #labels Phase-Implementation
-
-
+Store in WMB work path, for example C:\Documents and Settings\All Users\Application Data\IBM\MQSI on Windows. Name file lookup-connection.properties.
 
 {{{
 lookup.class=com.ibm.db2.jcc.DB2Driver
