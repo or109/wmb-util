@@ -17,3 +17,4 @@ Depending on the value of backout threshold set on the input queue, the message 
 For each failed retry, the message will be passed on the catch terminal. After which it will make the same number of retries on the Failure terminal. After that, the message will be stored on the backout queue set on the input queue, or possible the dead-letter queue.
 
 == Caveats ==
+Note that this error flow is only useful in some scenarios. Carefully investigate if it does what you want before using it.
