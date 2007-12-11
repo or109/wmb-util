@@ -1,4 +1,21 @@
 #labels Phase-Implementation
 First, setup your LookupConfiguration.
 
-Then, LookupValues.
+== Adding values to the database ==
+ * Insert a component into the component table
+ * Using the ID generated in the previous step, add the lookup values needed to the lookup table
+
+== Using the lookup API ==
+In your Java code, you create a lookup instance using:
+{{{
+Lookup lookup = new Lookup("MyComponent");
+}}}
+
+It is recommended to do this once per Java compute node. There is no need to cache the Lookup instance as it is cheap to create.
+
+After creating, you can lookup values using:
+{{{
+String myValue = lookup.lookupValue("MyKey");
+}}}
+
+If the key does not exist in the database, null will be returned. Otherwise, your configured value will be returned.
