@@ -2,7 +2,7 @@
 The idea of the error subflow is to be a generic and simple solution for how to handle errors in common message flows. The currently implementation targets flows with MQ input nodes and persistent messages. 
 
 == Installation ==
- # Download the [http://wmb-util.googlecode.com/svn/wmb-util-flows/|message flow project] and the Java project. 
+ # Download the [http://wmb-util.googlecode.com/svn/wmb-util-flows/ message flow project] and the Java project. 
  # Add the downloaded projects to your workspace.
  # Add a reference to the error subflow project from your message flow project
  # Add the subflow to your flow, for example my drag-n-drop
