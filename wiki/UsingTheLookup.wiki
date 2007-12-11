@@ -1,6 +1,11 @@
 #labels Phase-Implementation
 First, setup your LookupConfiguration.
 
+== Understanding time-outs ==
+The Lookup cache values in memory. This has two purposes, first to speed up lookup. Second, to provide robustness in case the database failure. However, since values might be updated, they can not be cached forever. The following configuration values control the cache:
+ * TTL: time to live. The number of seconds before the cache will refresh the value from the database
+ * TTD: 
+
 == Adding values to the database ==
  * Insert a component into the component table
  * Using the ID generated in the previous step, add the lookup values needed to the lookup table
