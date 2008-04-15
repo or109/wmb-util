@@ -3,7 +3,7 @@
 	<name>wmb-util-flows</name>
 	<comment></comment>
 	<projects>
-		<project>wmb-util</project>
+		<project>wmb-util-flows-java</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
