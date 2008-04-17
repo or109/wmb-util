@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<palette:CategoryCmp xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:palette="http://www.ibm.com/wbi/2005/eflow_palette" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" xmi:id="iSeries">
+  <categoryLabel xmi:type="utility:TranslatableString" key="category.name" bundleName="palette" pluginId="qsys-node-toolkit2"/>
+  <cmpGroups xmi:type="palette:GroupCmp">
+    <cmpEntries xmi:type="palette:ToolEntry" xmi:id="QsysOutput" icon16Name="platform:/plugin/qsys-node-toolkit2/icons/full/clcl16/QsysOutput.gif" icon32Name="platform:/plugin/qsys-node-toolkit2/icons/full/obj30/QsysOutput.gif" toolClassName="com.ibm.etools.mft.flow.editor.MFTNodeCreationTool" toolClassPluginId="com.ibm.etools.mft.flow" nodeURI="QsysOutput.msgnode">
+      <entryLabel xmi:type="utility:TranslatableString" key="entry.QsysOutput" bundleName="palette" pluginId="qsys-node-toolkit2"/>
+      <entryShortDescription xmi:type="utility:TranslatableString" key="tooltip.QsysOutput" bundleName="palette" pluginId="qsys-node-toolkit2"/>
+    </cmpEntries>
+  </cmpGroups>
+</palette:CategoryCmp>
