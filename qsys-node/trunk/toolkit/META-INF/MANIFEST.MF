@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Version: 1.0.0
+Require-Bundle: com.ibm.etools.mft.api
+Bundle-SymbolicName: com.googlecode.nodes.qsys; singleton:=true
+Bundle-Name: QSYS nodes
+Bundle-Localization: plugin
+
