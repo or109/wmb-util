@@ -30,8 +30,12 @@ The node has five properties.
 *userName - user name for logging in to the iSeries platform
 *password - password used
 
-These properties can all be set in the toolkit, but is ONLY for testing purposes. Instead set the properties in the LocalEnvironment of the message.
+These properties can all be set in the toolkit, but is ONLY for testing purposes. Instead set the properties in the !LocalEnvironment of the message.
 
-Set the properties in the LocalEnvironment like this
+Set the properties in the !LocalEnvironment of the message like this:
 
 http://wmb-util.googlecode.com/svn/wiki/properties.gif
+
+The user name and password is read from a property file that should be placed in the users home directory. The file name should be qsys.properties and contain two properties:
+userName=theuser
+password=thepassword
