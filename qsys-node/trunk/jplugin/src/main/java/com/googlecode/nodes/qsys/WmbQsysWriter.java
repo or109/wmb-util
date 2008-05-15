@@ -4,11 +4,16 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.ibm.as400.access.AS400;
 import com.ibm.broker.plugin.MbElement;
 import com.ibm.broker.plugin.MbMessage;
 
 public class WmbQsysWriter {
+	
+	private static final Log logger = LogFactory.getLog(WmbQsysWriter.class);
 
 	private QsysWriter writer;
 	
@@ -30,7 +35,8 @@ public class WmbQsysWriter {
 	public void write(AS400 sys, MbMessage message) throws Exception {
 		MbElement root = message.getRootElement();
 		
-		MbElement wmbRecord = root.getFirstChild();
+		MbElement wmbRecord = root.getFirstElementByPath("MRM").getFirstChild();
+		//TODO Null-koll
 		
 		List<Record> records = new ArrayList<Record>();
 		
@@ -42,12 +48,13 @@ public class WmbQsysWriter {
 			while(wmbField != null) {
 				Object value = wmbField.getValue();
 				fields.add(new Field(wmbField.getName(), wmbObjectToQsysObject(value)));
+				wmbField = wmbField.getNextSibling();
 			}
 			
 			records.add(new Record(fields));
 			wmbRecord = wmbRecord.getNextSibling();
 		}
-		
+		logger.debug("Found " + records.size() + " records.");
 		writer.write(sys, records);
 	}
 
