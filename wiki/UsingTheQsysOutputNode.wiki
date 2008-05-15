@@ -33,3 +33,5 @@ The node has five properties.
 These properties can all be set in the toolkit, but is ONLY for testing purposes. Instead set the properties in the LocalEnvironment of the message.
 
 Set the properties in the LocalEnvironment like this
+
+http://wmb-util.googlecode.com/svn/wiki/properties.gif
