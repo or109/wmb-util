@@ -15,7 +15,7 @@ The Qsys Output Node takes a parsed message as input and writes this message to 
 jt400.jar
 log4j-1.2.14.jar
 commons-logging-1.1.1.jar
-
+ 
 These should be placed in the jplugin folder.
 
 In order to see the log output from the node, you also need to create a log4j.properties and put this in a jar file that is placed in the jplugin folder.
@@ -24,11 +24,11 @@ In order to see the log output from the node, you also need to create a log4j.pr
 
 === Properties ===
 The node has five properties.
-*host - this is the iSeries host
-*filePath - the path of the file that a message should be written to (/QSYS.LIB/YOURLIB.LIB/YOURFILE.FILE/YOURMEMBER.MBR)
-*command - set this property if a command should execute after the file has been written (CALL YOURLIB/YOURPROGRAM)
-*userName - user name for logging in to the iSeries platform
-*password - password used
+ * host - this is the iSeries host
+ * filePath - the path of the file that a message should be written to (/QSYS.LIB/YOURLIB.LIB/YOURFILE.FILE/YOURMEMBER.MBR)
+ * command - set this property if a command should execute after the file has been written (CALL YOURLIB/YOURPROGRAM)
+ * userName - user name for logging in to the iSeries platform
+ * password - password used
 
 These properties can all be set in the toolkit, but is ONLY for testing purposes. Instead set the properties in the !LocalEnvironment of the message.
 
