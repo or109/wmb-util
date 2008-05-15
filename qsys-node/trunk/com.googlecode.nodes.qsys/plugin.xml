@@ -12,10 +12,8 @@
     <!--User modifications to this section will not be preserved.-->
     <extension point="com.ibm.etools.mft.uri.pluginspace">
         <directory>
-            <file encoding="Cp1252" name="target/qsys-node-0.1-SNAPSHOT.jar"/>
             <file encoding="ISO-8859-1" name="QsysOutput.properties"/>
             <file encoding="Cp1252" name="QsysOutput.msgnode"/>
-            <file encoding="Cp1252" name="target/qsys-node-0.1-SNAPSHOT-sources.jar"/>
             <file encoding="UTF-8" name="META-INF/MANIFEST.MF"/>
         </directory>
     </extension>
