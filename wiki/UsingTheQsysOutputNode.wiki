@@ -12,13 +12,14 @@ The Qsys Output Node takes a parsed message as input and writes this message to 
  # There should now be a separate tab in the message flow editor that contains the new node.
 
 == Dependencies (v0.2) ==
-jt400.jar
-log4j-1.2.14.jar
-commons-logging-1.1.1.jar
+ * jt400.jar
+ * log4j-1.2.14.jar
+ * commons-logging-1.1.1.jar
  
 These should be placed in the jplugin folder.
 
-In order to see the log output from the node, you also need to create a log4j.properties and put this in a jar file that is placed in the jplugin folder.
+ * log4j.properties
+In order to see the log output from the node, you also have to create a log4j.properties and put this in a jar file that is placed in the jplugin folder.
 
 == Using the node ==
 
