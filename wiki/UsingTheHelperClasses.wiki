@@ -39,5 +39,54 @@ Rfh2Header inRfh2 = Rfh2Header.wrap(inMsg, true);
 String foo = inRfh2.getStringProperty("usr", "foo");
 }}}
 
-== Additional example ==
+== Creating headers, message & attachment for the Email Node ==
+The simplest way to send emails is to only create & configure the EmailPayload.
+However, attachments and email server settings can be used by adding EmailAttachment & EmailDestination objects to the local environment.
+
+{{{
+
+// Create a new message from scratch
+MbMessage outMessage = new MbMessage();
+
+// Create a new assembly using input assembly and new message
+MbMessageAssembly outAssembly = new MbMessageAssembly(inAssembly, outMessage);
+
+// Wraps the local environemnt of the new assembly
+LocalEnvironment localEnv = LocalEnvironment.wrap(outAssembly.getLocalEnvironment(), false);       
+
+// Create the email payload
+EmailPayload email = EmailPayload.create(outMessage);
+
+// Create an attachment
+EmailAttachment attachment = new EmailAttachment();
+
+// Create an email destination header
+EmailDestination destination = new EmailDestination();
+
+// Sets the name of the attachment
+attachment.setAttachmentContentName("text_file.txt");
+
+// Sets the content (as text) of the attachment.
+attachment.setAttachmentContentAsText("This is a textfile.");
+
+// Sets the MIME content type of the attachment
+attachment.setAttachmentContentType("text/plain");
+		
+// Sets the SMTP server (overrides Email Node settings)
+destination.setSmtpServer("smtp.mydomain.com");
+		
+// Sets email addresses & subject
+email.setTo("me@mydomain.com");
+email.setFrom("wmb@mydomain.com");
+email.setSubject("Email message from WMB");
+
+// Sets email message body
+email.setMessage("Hello world!");
+		
+// Add attachment & email destination header to the local environment
+localEnv.addEmailAttachment(attachment);
+localEnv.setEmailDestination(destination);
+}}}
+
+== Additional examples ==
 You can find more examples in [http://wmb-util.googlecode.com/svn/wmb-util/trunk/src/examples/java/com/googlecode/wmbutil/messages/ SVN]
