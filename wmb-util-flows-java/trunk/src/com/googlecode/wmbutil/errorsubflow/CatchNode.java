@@ -12,13 +12,10 @@ public class CatchNode extends MbJavaComputeNode {
 	public void evaluate(MbMessageAssembly assembly) throws MbException {
 		MbOutputTerminal out = getOutputTerminal("out");
 
-		// ----------------------------------------------------------
-		// Add user code below
-
 		WmbLogger log = new WmbLogger(Logger.getLogger(getBroker().getName() + "." + getMessageFlow().getName() + ".ErrorSubflow.Catch"));
 		
 		log.warn("Problem detected in flow, will retry. Message content logged at debug level.");
-		//log.debug("Problematic message", assembly);
+		log.debug("Problematic message", assembly);
 		
 		if(getUserDefinedAttribute("SleepTime") != null) {
 			long sleepTime = ((Integer)getUserDefinedAttribute("SleepTime")).intValue();
@@ -34,12 +31,6 @@ public class CatchNode extends MbJavaComputeNode {
 				log.debug("Waited for " + sleepTime + " ms, will now retry");
 			}
 		}
-		
-		// End of user code
-		// ----------------------------------------------------------
-
-		// The following should only be changed
-		// if not propagating message to the 'out' terminal
 
 		out.propagate(assembly);
 		
