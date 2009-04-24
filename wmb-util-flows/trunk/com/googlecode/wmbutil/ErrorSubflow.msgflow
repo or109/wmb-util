@@ -20,11 +20,11 @@
       <nodes xmi:type="ComIbmThrow.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="649,124" messageText="Exception thrown in error subflow">
         <translation xmi:type="utility:ConstantString" string="Throw"/>
       </nodes>
-      <nodes xmi:type="ComIbmJavaCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="417,269" javaClass="com.googlecode.wmbutil.errorsubflow.CatchNode">
+      <nodes xmi:type="ComIbmJavaCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="416,269" javaClass="com.googlecode.wmbutil.errorsubflow.CatchNode">
         <translation xmi:type="utility:ConstantString" string="LogAndSleep"/>
       </nodes>
       <nodes xmi:type="ComIbmJavaCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="410,124" javaClass="com.googlecode.wmbutil.errorsubflow.FailureNode">
-        <translation xmi:type="utility:ConstantString" string="JavaCompute"/>
+        <translation xmi:type="utility:ConstantString" string="LogAndBackout"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_2" sourceNode="InTerminal.Input1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_1" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
