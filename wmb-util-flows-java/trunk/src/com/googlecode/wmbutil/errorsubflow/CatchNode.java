@@ -18,7 +18,7 @@ public class CatchNode extends MbJavaComputeNode {
 		WmbLogger log = new WmbLogger(Logger.getLogger(getBroker().getName() + "." + getMessageFlow().getName() + ".ErrorSubflow.Catch"));
 		
 		log.warn("Problem detected in flow, will retry. Message content logged at debug level.");
-		log.debug("Problematic message", assembly);
+		//log.debug("Problematic message", assembly);
 		
 		if(getUserDefinedAttribute("SleepTime") != null) {
 			long sleepTime = ((Integer)getUserDefinedAttribute("SleepTime")).intValue();
