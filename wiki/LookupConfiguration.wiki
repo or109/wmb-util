@@ -18,4 +18,6 @@ lookup.password=sa
 
 Just must also make sure that your JDBC driver JARs are available for WMB. The driver for DB2 ships with WMB. In addition, you also need commons-pool-1.3.jar and commons-dbcp-1.2.2.jar in shared-classes.
 
+As a security measure, make sure that the file is only accessible for the broker user.
+
 After getting everything in place you have to restart WMB.
