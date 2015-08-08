@@ -1,0 +1,45 @@
+The Qsys Output Node takes a parsed message as input and writes this message to a specified QSYS file. It is also possible to execute a command in iSeries after the file has been written.
+
+
+## Installation ##
+  1. Download the files qsys-node-N.N.jar and com.googlecode.nodes.qsys\_N.N.N.jar
+  1. Place the qsys-node jar in the brokers jplugin folder.
+  1. Place the qsys-node dependencies in the jplugin folder (see below)
+  1. Place the com.googlecode.nodes.qsys jar file in the toolkits plugins folder (C:\Program Files\IBM\WMBT610\plugins)
+  1. Create a property file in USER.HOME called qsys.properties. This file must contain two properties: **userName** and **password**. That is, the credentials for the iSeries login.
+  1. Restart the broker
+  1. Restart the toolkit
+  1. There should now be a separate tab in the message flow editor that contains the new node.
+
+## Dependencies (v0.2) ##
+  * jt400.jar
+  * log4j-1.2.14.jar
+  * commons-logging-1.1.1.jar
+
+These should be placed in the jplugin folder.
+
+  * log4j.properties
+In order to see the log output from the node, you also have to create a log4j.properties and put this in a jar file that is placed in the jplugin folder.
+
+## Using the node ##
+
+### Properties ###
+The node has five properties.
+  * host - this is the iSeries host
+  * filePath - the path of the file that a message should be written to (/QSYS.LIB/YOURLIB.LIB/YOURFILE.FILE/YOURMEMBER.MBR)
+  * command - set this property if a command should execute after the file has been written (CALL YOURLIB/YOURPROGRAM)
+  * userName - user name for logging in to the iSeries platform
+  * password - password used
+
+These properties can all be set in the toolkit, but is ONLY for testing purposes. Instead set the properties in the LocalEnvironment of the message.
+
+Set the properties in the LocalEnvironment of the message like this:
+
+![http://wmb-util.googlecode.com/svn/wiki/properties.gif](http://wmb-util.googlecode.com/svn/wiki/properties.gif)
+
+The user name and password is read from a property file that should be placed in the users home directory. The file name should be qsys.properties and contain two properties:
+userName=theuser
+password=thepassword
+
+### The message ###
+The message should be parsed using a message set that conforms to the qsys file's description.

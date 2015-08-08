@@ -1,0 +1,10 @@
+Since there are restrictions on distributing some of the required JARs for this project, you first need to follow these instructions before building (this is a one time task):
+
+  1. Find your message broker installation path, for example C:\Program Files\IBM\MQSI\6.1\
+  1. Run the following commands replacing the message broker installation paths and version where needed:
+```
+mvn install:install-file -Dfile="C:\Program Files\IBM\MQSI\6.1\classes\javacompute.jar" -DgroupId=com.ibm.broker -DartifactId=javacompute -Dversion=6.1.0.3 -Dpackaging=jar
+mvn install:install-file -Dfile="C:\Program Files\IBM\MQSI\6.1\classes\jplugin2.jar" -DgroupId=com.ibm.broker -DartifactId=jplugin2 -Dversion=6.1.0.3 -Dpackaging=jar
+```
+
+If you needed to change the message broker version, you will also need to update the appropriate versions in pom.xml.
